@@ -10,8 +10,8 @@ public class Config {
     public Config(Assassin parent) {
         parent.getConfig().options().copyDefaults(true);
         parent.saveConfig();
-        instaKill = (boolean) parent.getConfig().get("assassins-insta-kill-speedrunner");
-        compass = (boolean) parent.getConfig().get("compass-tracking");
-        freeze = (boolean) parent.getConfig().get("freeze-assassin-when-seen");
+        instaKill = (boolean) parent.getConfig(false).get("assassins-insta-kill-speedrunner");
+        compass = (boolean) parent.getConfig(true).get("compass-tracking");
+        freeze = (boolean) parent.getConfig(false).get("freeze-assassin-when-seen");
     }
 }
